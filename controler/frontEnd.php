@@ -5,7 +5,9 @@ function chargerClasse($class)
     require_once('model/' . $class. '.php');
 }
 
+/////////////////////////////////////////////////////post
 
+//Affichage de tout les post
 function listPosts()
 {
     $postManager = new PostManager(); // Création d'un objet
@@ -16,6 +18,7 @@ function listPosts()
     require('view/frontend/listPostView.php');
 }
 
+//Affiche un post et ses commentaires
 function post($postId)
 {
     $postManager = new PostManager();
@@ -30,8 +33,9 @@ function post($postId)
 
 
 
-//////////////////////////////////////////////////////////commentaires
+////////////////////////////////////////////////////commentaires
 
+//
 function addComment($postId, $author, $comment)
 {
     $commentManager = new CommentManager();
@@ -41,21 +45,23 @@ function addComment($postId, $author, $comment)
     if ($affectedLines === false) {
         throw new Exception('Impossible d\'ajouter le commentaire !');
     }
-    else {
+    else
+    {
+        //Retour à l'affichage du post   !!! essayer post($postId);
         header('Location: index.php?action=post&id=' . $postId);
     }
 }
 
+
 function signalComment($comId,$postId)
 {
-    echo 'pas achevé';
     $commentManager = new CommentManager();
     $commentManager->signalComment($comId);
 
     post($postId);
 }
 
-//////////////////////////////////////////////////////////biographie
+/////////////////////////////////////////////////////biographie
 function bio()
 {
     require('view/frontend/bioView.php');
