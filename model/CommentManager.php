@@ -1,4 +1,6 @@
 <?php
+//solution temporaire routeur dossier different
+
 if (file_exists('model/Manager.php'))
 {
     require_once('model/Manager.php');
