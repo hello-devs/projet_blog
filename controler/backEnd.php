@@ -77,7 +77,7 @@ function managePosts()
 {
      //recup des posts
     $postManager = new PostManager(); // Création d'un objet
-    $posts = $postManager->getPosts(all); // Appel d'une fonction de cet objet
+    $posts = $postManager->getPosts('all'); // Appel d'une fonction de cet objet
 
     require('../view/backend/managePostsView.php');
 }
@@ -101,7 +101,7 @@ function manageArticle($id)
 function listPosts()
 {
     $postManager = new PostManager(); // Création d'un objet
-    $posts = $postManager->getPosts(all); // Appel d'une fonction de cet objet
+    $posts = $postManager->getPosts('all'); // Appel d'une fonction de cet objet
 
     require('../view/backEnd/managePostView.php');
 }
