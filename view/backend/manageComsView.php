@@ -60,7 +60,7 @@
 
 <div id="avalid">
     <div class="row bandeau">
-        <p class="bandeau card center s12">Commentaire(s) à valier:</p>
+        <p class="bandeau card center s12">Commentaire(s) à valider:</p>
     </div>
     <div class="container">
         <table class="card bordered highlight responsive-table">
