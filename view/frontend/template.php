@@ -30,7 +30,7 @@
 
                 <ul class="navbar-nav right">
                     <li><a href="index.php">Accueil</a></li>
-                    <li><a href="?action=bio">Bio</a></li>
+                    <li><a href="?action=bio">Biographie</a></li>
                     <li><a href="?action=contact">Contact</a></li>
                 </ul>
             </nav>
