@@ -82,6 +82,13 @@ function managePosts()
     require('../view/backend/managePostsView.php');
 }
 
+//Création d'un article
+function createArticle($id = null)
+{
+    require('../view/backend/addPostView.php');
+}
+
+
 //Gestion d'un article
 function manageArticle($id)
 {

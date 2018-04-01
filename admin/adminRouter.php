@@ -71,6 +71,11 @@ try
         {
             managePosts();
         }
+        elseif ($_GET['action'] == 'createArticle')
+        {
+            createArticle();
+        }
+
 
         elseif ($_GET['action'] == 'manageArticle')
         {
