@@ -17,7 +17,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
 
     <!--TyniMce-->
-    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script src="../../public/js/tinymce/tinymce.min.js"></script>
     <script>tinymce.init({ selector:'textarea' });</script>
 
     <meta charset="utf-8" />
