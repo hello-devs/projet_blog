@@ -13,7 +13,7 @@ function manageBlog()
 {
     //recup des posts
     $postManager = new PostManager(); // Création d'un objet
-    $posts = $postManager->getPosts(); // Appel d'une fonction de cet objet
+    $posts = $postManager->getPostss('all'); // Appel d'une fonction de cet objet
 
 
     //recup des coms et comptage
@@ -22,7 +22,6 @@ function manageBlog()
     $commentsValidCount = $commentManager->getCount('valid','1');
     $commentsToValidCount = $commentManager->getCount('valid','0');
     $commentsSignalCount = $commentManager->getCount('signall','1');
-
 
 
 
@@ -78,15 +77,16 @@ function managePosts()
 {
      //recup des posts
     $postManager = new PostManager(); // Création d'un objet
-    $posts = $postManager->getPosts(); // Appel d'une fonction de cet objet
+    $posts = $postManager->getPostss(all); // Appel d'une fonction de cet objet
 
-
+    require('../view/backend/managePostsView.php');
 }
 
 //Gestion d'un article
 function manageArticle($id)
 {
     //
+    echo 'afficher l\'article '.$id.' pour RUD';
 }
 
 
@@ -101,7 +101,7 @@ function manageArticle($id)
 function listPosts()
 {
     $postManager = new PostManager(); // Création d'un objet
-    $posts = $postManager->getPosts(); // Appel d'une fonction de cet objet
+    $posts = $postManager->getPostss(all); // Appel d'une fonction de cet objet
 
     require('../view/backEnd/managePostView.php');
 }

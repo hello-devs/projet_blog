@@ -12,13 +12,6 @@ else
 
 class PostManager extends Manager
 {
-    public function getPosts()  //A remplacer par getPostss($etat)
-    {
-        $db = $this->dbConnect();
-        $req = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr, etat FROM posts ORDER BY creation_date DESC');
-
-        return $req;
-    }
 
     public function getPostss($etat)
     {

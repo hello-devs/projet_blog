@@ -11,7 +11,7 @@ function chargerClasse($class)
 function listPosts()
 {
     $postManager = new PostManager(); // Création d'un objet
-    $posts = $postManager->getPostss('publié'); // Appel d'une fonction de cet objet
+    $posts = $postManager->getPosts('publié'); // Appel d'une fonction de cet objet
 
     $commentManager = new CommentManager();
 
