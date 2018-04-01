@@ -13,7 +13,7 @@ else
 class PostManager extends Manager
 {
 
-    public function getPostss($etat)
+    public function getPosts($etat)
     {
         switch($etat)
         {

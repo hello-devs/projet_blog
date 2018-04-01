@@ -76,7 +76,7 @@ try
         {
             if (isset($_GET['id']) && $_GET['id'] > 0)
             {
-                manageArticle();
+                manageArticle($_GET['id']);
             }
             else
             {
