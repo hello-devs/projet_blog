@@ -20,7 +20,7 @@
             <div class="row">
                 <div class="col s12">
                     <label for="textarea1">Message</label>
-                    <textarea id="textarea1" name="message" class="materialize-textarea"></textarea>
+                    <textarea id="textarea1" name="message" class="materialize-textarea" required></textarea>
 
                 </div>
             </div>

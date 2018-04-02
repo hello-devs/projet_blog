@@ -18,7 +18,7 @@
 
     <!--TyniMce-->
     <script src="../../public/js/tinymce/tinymce.min.js"></script>
-    <script>tinymce.init({ selector:'textarea' });</script>
+    <script>tinymce.init({ selector:'textarea' , language : "fr_FR"});</script>
 
     <meta charset="utf-8" />
 </head>
