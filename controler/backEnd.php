@@ -23,14 +23,8 @@ function manageBlog()
     $commentsToValidCount = $commentManager->getCount('valid','0');
     $commentsSignalCount = $commentManager->getCount('signall','1');
 
-
-
     require('../view/backEnd/manageBlogView.php');
 }
-
-
-
-
 
 
 
@@ -45,10 +39,7 @@ function manageComs()
     $commentsAvalid = $commentManager->getAllComments('avalid');
     $commentsValid = $commentManager->getAllComments('valid');
 
-
-
     require('../view/backEnd/manageComsView.php');
-
 }
 
 //Validation d'un commentaire
@@ -60,14 +51,13 @@ function validCom($comId)
     manageComs();
 }
 
-
+//Effacer un commentaire
 function deleteCom($comId)
 {
     $commentManager = new CommentManager();
     $commentManager->deleteComment($comId);
 
     manageComs();
-
 }
 
 ////////////////////////////////////////////Articles
@@ -76,51 +66,53 @@ function deleteCom($comId)
 function managePosts()
 {
      //recup des posts
-    $postManager = new PostManager(); // Création d'un objet
-    $posts = $postManager->getPosts('all'); // Appel d'une fonction de cet objet
+    $postManager = new PostManager();
+    $posts = $postManager->getPosts('all');
 
     require('../view/backend/managePostsView.php');
 }
 
+//Gestion des articles
+function managePost($id,$message = null)
+{
+    //recup du posts
+    $postManager = new PostManager();
+    $post = $postManager->getPost($id);
+
+    require('../view/backend/managePostView.php');
+}
+
 //Création d'un article
-function createArticle($id = null)
+function createArticle()
 {
     require('../view/backend/addPostView.php');
 }
 
+//Insertion d'un article dans la bdd
+function ajouterPost()
+{
+    $postManager = new PostManager();
+    $newPost = $postManager->ajouterPost();
+
+    managePost($newPost['id'],$newPost['message']);
+}
 
 //Gestion d'un article
 function manageArticle($id)
 {
-    //
     echo 'afficher l\'article '.$id.' pour RUD';
-}
 
-
-
-
-
-
-
-
-
-
-function listPosts()
-{
-    $postManager = new PostManager(); // Création d'un objet
-    $posts = $postManager->getPosts('all'); // Appel d'une fonction de cet objet
-
-    require('../view/backEnd/managePostView.php');
-}
-
-function post()
-{
+    //
     $postManager = new PostManager();
     $commentManager = new CommentManager();
 
-    $post = $postManager->getPost($_GET['id']);
-    $comments = $commentManager->getComments($_GET['id']);
+    $post = $postManager->getPost($id);
+    $comments = $commentManager->getComments($id);
 
-    require('../view/frontend/postView.php');
+    require('../view/backend/managePostView.php');
+
 }
+
+
+
 

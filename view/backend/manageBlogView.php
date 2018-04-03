@@ -52,7 +52,7 @@
         <table class="card bordered highlight responsive-table">
             <thead>
                 <tr>
-                    <th>Titre de l' article</th>
+                    <th>Titre de l'article</th>
                     <th>Résumé</th>
                     <th>Date de rédaction</th>
                     <th>&Eacute;tat</th>

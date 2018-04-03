@@ -1,4 +1,4 @@
-<?php $title = 'Mon blog - NOUVEL ARTICLE'; ?>
+<?php $title = 'Admin - Gestion Article'; ?>
 
 <?php ob_start(); ?>
 
@@ -9,13 +9,13 @@
    </div>
 
     <div class="row card-panel ">
-        <form action="?action=createArticle" method="post" class="col s12 m10 offset-m1">
+        <form action="?action=updateArticle" method="post" class="col s12 m10 offset-m1">
 
             <div class="row">
-                <input type="text" name="titre" placeholder="Titre de l'article" class="col s12 m6">
+                <input type="text" name="titre" placeholder="Titre de l'article" class="col s12 m6" value="<?= $post['title'] ?>" >
             </div>
             <div class="row">
-                <textarea name="contenu" id="inputArticle" cols="30" rows="10"><br>Votre article ici</textarea>
+                <textarea name="contenu" id="inputArticle" cols="30" rows="10"> <?= $post['content'] ?> </textarea>
             </div>
             <div class="row">
                 <input type="submit" class="btn blue-grey lighten-3">

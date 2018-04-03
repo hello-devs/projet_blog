@@ -12,7 +12,29 @@ else
 
 class PostManager extends Manager
 {
+    //Ajouter un article (c)
+    public function ajouterPost()
+    {
+        $date = new DateTime('now',new DateTimeZone('Europe/Paris'));  // Date actuelle
+        $date_string = $date->format('Y-m-d H:m:s');
 
+        $db = $this->dbConnect();
+        $newPost = $db->prepare('INSERT INTO posts(title, content, creation_date) VALUES(:titre, :contenu, :date)');
+
+        $newPost->execute(array(
+        'titre'=>$_POST['titre'],
+        'contenu'=>$_POST['contenu'],
+        'date'=>$date_string));
+
+        $newPost = array(
+            'id' => $db->lastInsertId(),  //On récupère l' id du post que l'on vient de créer
+            'message' => 'Article envoyé'  //Création du message a afficher dans la vue suivante.
+        );
+
+        return $newPost;
+    }
+
+    //Récupérer des articles (r)
     public function getPosts($etat)
     {
         switch($etat)
@@ -33,17 +55,13 @@ class PostManager extends Manager
                 throw new Exception("Ce cas n'est pas prévu par le développeur dans sa fonction getPosts() !");
         }
 
-
-
-
-
-
         $db = $this->dbConnect();
         $req = $db->query($sql);
 
         return $req;
     }
 
+    //Récupérer un article (r)
     public function getPost($postId)
     {
         $db = $this->dbConnect();
@@ -54,6 +72,7 @@ class PostManager extends Manager
         return $post;
     }
 
+    //Modifier un article (u)
     public function editPost($postId)
     {
         $db = $this->dbConnect();
@@ -68,6 +87,7 @@ class PostManager extends Manager
         'postId' => $postId));
     }
 
+    //Effacer un article (d)
     public function deletePost($postID)
     {
         $db = $this->dbConnect();
@@ -75,6 +95,7 @@ class PostManager extends Manager
             DELETE FROM posts
             WHERE id ='.$postID);
     }
+
 
 
 

@@ -11,16 +11,19 @@ try
     if (isset($_GET['action']))
     {
 
-        if ($_GET['action'] == 'manageBlog')
+        if ($_GET['action'] == 'manageBlog')  //Tableau de bord de l'admin
         {
             manageBlog();
         }
-        ///////////////////////////////////////////Commentaires
-        elseif ($_GET['action'] == 'manageComs')
+
+
+        ///////////////////////////////////////////***Commentaires
+
+        elseif ($_GET['action'] == 'manageComs')  //Gestion de tous les commentaires
         {
             manageComs();
         }
-        elseif ($_GET['action'] == 'validCom')
+        elseif ($_GET['action'] == 'validCom')   //Validation d'un commentaire
         {
              if (isset($_GET['id']) && $_GET['id'] > 0)
             {
@@ -34,7 +37,7 @@ try
             }
 
         }
-        elseif ($_GET['action'] == 'deleteCom')
+        elseif ($_GET['action'] == 'deleteCom')  //Suppression d'un commentaire
         {
              if (isset($_GET['id']) && $_GET['id'] > 0)
             {
@@ -50,34 +53,26 @@ try
         }
 
 
+        //////////////////////////////////////////***Articles
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //////////////////////////////////////////Articles
-        elseif ($_GET['action'] == 'manageArticles')
+        elseif ($_GET['action'] == 'manageArticles')   //Gestion de tous les articles
         {
             managePosts();
         }
-        elseif ($_GET['action'] == 'createArticle')
+        elseif ($_GET['action'] == 'createArticle')    //Création d'un article
         {
-            createArticle();
+            if(isset($_POST['titre']) AND isset($_POST['contenu']))
+            {
+                ajouterPost();  //Ajout à la bdd
+            }
+            else
+            {
+                createArticle();   //Rédaction de l'article
+            }
         }
 
 
-        elseif ($_GET['action'] == 'manageArticle')
+        elseif ($_GET['action'] == 'manageArticle')     //Edition d'un article
         {
             if (isset($_GET['id']) && $_GET['id'] > 0)
             {
@@ -90,19 +85,11 @@ try
             }
         }
         /*
-        elseif ($_GET['action'] == 'addComment')
+        elseif ($_GET['action'] == 'deletePost')
         {
             if (isset($_GET['id']) && $_GET['id'] > 0)
             {
-                if (!empty($_POST['author']) && !empty($_POST['comment']))
-                {
-                    addComment($_GET['id'], $_POST['author'], $_POST['comment']);
-                }
-                else
-                {
-                    // Autre exception
-                    throw new Exception('Tous les champs ne sont pas remplis !');
-                }
+                //
             }
             else
             {
@@ -114,7 +101,7 @@ try
     }
     else
     {
-        manageBlog();
+        manageBlog();  //Tableau de bord de l'administration
     }
 }
 catch(Exception $e)  // S'il y a eu une erreur, alors...
