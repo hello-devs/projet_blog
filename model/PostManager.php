@@ -100,6 +100,22 @@ class PostManager extends Manager
     }
 
 
+    //changer status d'article
+    function changeEtatPost($postId, $etat)
+    {
+        $db = $this->dbConnect();
+        $editPost = $db->prepare('
+        Update posts
+        SET etat = :etat
+        WHERE id = :postId');
+
+        $editPost->execute(array(
+            'etat' => $etat,
+            'postId' => $postId));
+
+    }
+
+
 
 
 }

@@ -112,6 +112,27 @@ function editPost($postId)
     managePost($postId);
 }
 
+//Supprimer un article
+function deletePost($postId)
+{
+    $postManager = new PostManager();
+    $postManager->deletePost($postId);
+
+    managePosts();
+}
+
+//Gestion Publié et brouillon
+//Mise à jour d'un article
+function changerEtatPost($postId,$etat)
+{
+    $postManager = new PostManager();
+    $postManager->changeEtatPost($postId, $etat);
+
+    managePost($postId);
+}
+
+
+
 
 
 

@@ -96,12 +96,11 @@ try
                 throw new Exception('Aucun identifiant d\'article envoyé');
             }
         }
-        /*
         elseif ($_GET['action'] == 'deletePost')
         {
             if (isset($_GET['id']) && $_GET['id'] > 0)
             {
-                //
+                deletePost($_GET['id']);
             }
             else
             {
@@ -109,7 +108,37 @@ try
                 throw new Exception('Aucun identifiant de billet envoyé');
             }
         }
-        */
+        elseif ($_GET['action'] == 'changerEtatPost')     //Edition d'un article
+        {
+            if (isset($_GET['id']) && $_GET['id'] > 0)
+            {
+
+                if (isset($_GET['etat']))
+                {
+                    if($_GET['etat']=='publié' || $_GET['etat']=='brouillon')
+                    {
+                        changerEtatPost($_GET['id'],$_GET['etat']);  //Maj du status
+                    }
+                    else
+                    {
+                        throw new Exception('Cet état ne convient pas a un article');
+                    }
+                }
+                else
+                {
+                    // Erreur ! On arrête tout, on envoie une exception, donc au saute directement au catch
+                    throw new Exception('Aucun état d\'article envoyé');
+                }
+            }
+            else
+            {
+                // Erreur ! On arrête tout, on envoie une exception, donc au saute directement au catch
+                throw new Exception('Aucun identifiant d\'article envoyé');
+            }
+        } //fin des elseif(action)
+
+
+
     }
     else
     {
