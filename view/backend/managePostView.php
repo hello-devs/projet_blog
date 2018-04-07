@@ -2,6 +2,7 @@
 
 <?php ob_start(); ?>
 
+
 <div class="container">
    <div class="row">
            <h1 class="card light-blue-text text-lighten-1 z-depth-2">NOUVEL ARTICLE</h1>
@@ -9,6 +10,11 @@
    </div>
 
     <div class="row card-panel ">
+
+        <?php if(isset($message)): ?>
+        <h5 class="orange-text text-lighten-1"><?= $message ?></h5>
+        <?php endif; ?>
+
         <form action="?action=updateArticle" method="post" class="col s12 m10 offset-m1">
 
             <div class="row">

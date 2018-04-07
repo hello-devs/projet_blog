@@ -28,7 +28,7 @@ class PostManager extends Manager
 
         $newPost = array(
             'id' => $db->lastInsertId(),  //On récupère l' id du post que l'on vient de créer
-            'message' => 'Article envoyé'  //Création du message a afficher dans la vue suivante.
+            'message' => 'ARTICLE ENVOY&Eacute;:'  //Création du message a afficher dans la vue suivante.
         );
 
         return $newPost;

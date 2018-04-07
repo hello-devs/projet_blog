@@ -72,11 +72,12 @@ try
         }
 
 
-        elseif ($_GET['action'] == 'manageArticle')     //Edition d'un article
+        elseif ($_GET['action'] == 'managePost')     //Edition d'un article
         {
             if (isset($_GET['id']) && $_GET['id'] > 0)
             {
-                manageArticle($_GET['id']);
+                managePost
+                    ($_GET['id']);
             }
             else
             {

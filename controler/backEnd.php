@@ -73,14 +73,7 @@ function managePosts()
 }
 
 //Gestion des articles
-function managePost($id,$message = null)
-{
-    //recup du posts
-    $postManager = new PostManager();
-    $post = $postManager->getPost($id);
 
-    require('../view/backend/managePostView.php');
-}
 
 //Création d'un article
 function createArticle()
@@ -98,10 +91,8 @@ function ajouterPost()
 }
 
 //Gestion d'un article
-function manageArticle($id)
+function managePost($id , $message = null)
 {
-    echo 'afficher l\'article '.$id.' pour RUD';
-
     //
     $postManager = new PostManager();
     $commentManager = new CommentManager();

@@ -55,8 +55,8 @@
                     <th>Titre de l'article</th>
                     <th>Résumé</th>
                     <th>Date de rédaction</th>
-                    <th>&Eacute;tat</th>
-                    <th>&Eacute;diter</th>
+                    <th class="center-cell">&Eacute;tat</th>
+                    <th class="center-cell">&Eacute;diter</th>
                 </tr>
             </thead>
 
@@ -66,10 +66,16 @@
 
                         <tr>
                             <td><?= $post['title'] ?></td>
-                            <td><?= substr($post['content'], 0, 100); ?></td>
+
+                            <td><?= substr($post['content'], 0, 100) ?></td>
+
                             <td><?= $post['date_creation_fr'] ?></td>
-                            <td><?= $post['etat'] ?></td>
-                            <td class="center"><a href="?action=manageArticle&id=<?= $post['id'] ?>"><i class="far fa-edit fa-2x"></i></a></td>
+
+                            <td class="center-cell"><?= $post['etat'] ?></td>
+
+                            <td  class="center-cell">
+                            <a href="?action=managePost&id=<?= $post['id'] ?>"><i class="far fa-edit fa-2x"></i></a>
+                            </td>
                         </tr>
 
 
