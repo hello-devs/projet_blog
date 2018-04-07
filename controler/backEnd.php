@@ -101,8 +101,17 @@ function managePost($id , $message = null)
     $comments = $commentManager->getComments($id);
 
     require('../view/backend/managePostView.php');
-
 }
+
+//Mise à jour d'un article
+function editPost($postId)
+{
+    $postManager = new PostManager();
+    $message = $postManager->editPost($postId);
+
+    managePost($postId);
+}
+
 
 
 

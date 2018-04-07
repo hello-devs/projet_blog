@@ -79,12 +79,15 @@ class PostManager extends Manager
         $editPost = $db->prepare('
         Update posts
         SET title = :title,
-        content = :content,
+        content = :content
         WHERE id = :postId');
 
         $editPost->execute(array(
-        'content' => $_POST['content'],
-        'postId' => $postId));
+            'title' => $_POST['titre'],
+            'content' => $_POST['contenu'],
+            'postId' => $postId));
+
+        return 'MESSAGE MIS &Agrave; JOUR';
     }
 
     //Effacer un article (d)

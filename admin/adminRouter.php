@@ -72,12 +72,23 @@ try
         }
 
 
-        elseif ($_GET['action'] == 'managePost')     //Edition d'un article
+        elseif ($_GET['action'] == 'managePost')     //Gestion d'un article
         {
             if (isset($_GET['id']) && $_GET['id'] > 0)
             {
-                managePost
-                    ($_GET['id']);
+                managePost($_GET['id']);
+            }
+            else
+            {
+                // Erreur ! On arrête tout, on envoie une exception, donc au saute directement au catch
+                throw new Exception('Aucun identifiant d\'article envoyé');
+            }
+        }
+        elseif ($_GET['action'] == 'editPost')     //Edition d'un article
+        {
+            if (isset($_GET['id']) && $_GET['id'] > 0)
+            {
+                editPost($_GET['id']);  //Maj du post
             }
             else
             {

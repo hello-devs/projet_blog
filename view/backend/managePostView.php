@@ -15,7 +15,7 @@
         <h5 class="orange-text text-lighten-1"><?= $message ?></h5>
         <?php endif; ?>
 
-        <form action="?action=updateArticle" method="post" class="col s12 m10 offset-m1">
+        <form action="?action=editPost&id=<?= $post['id'] ?>" method="post" class="col s12 m10 offset-m1">
 
             <div class="row">
                 <input type="text" name="titre" placeholder="Titre de l'article" class="col s12 m6" value="<?= $post['title'] ?>" >
