@@ -11,7 +11,7 @@
         <hr>
         <br>
         <p>
-            <?= nl2br(htmlspecialchars($post['content'])) ?>
+            <?= nl2br($post['content']) ?>
         </p>
     </article>
   </div>
