@@ -23,7 +23,7 @@ while ($data = $posts->fetch())
                 <hr class="">
 
                 <p class="black-text">
-                    <?= substr(nl2br(htmlspecialchars($data['content'])),0,200) ?>
+                    <?= substr(nl2br($data['content']),0,200) ?>
                     <br />
                     <em class="light-blue-text text-lighten-2">En savoir plus...</em>
                 </p>
