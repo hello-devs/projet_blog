@@ -7,23 +7,23 @@
 <div class="row center">
 
 <?php
-while ($data = $posts->fetch())
+while ($post = $posts->fetch())
 {
 ?>
     <article class="col s12 m3 card-panel z-depth-2 hoverable articleCards">
 
-        <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">
+        <a href="index.php?action=post&amp;id=<?= $post['id'] ?>">
             <div class="apercuArticle">
                 <span class="card-title black-text">
-                    <?= htmlspecialchars($data['title']) ?>
-                    <em class="date"><br> le <?= $data['date_creation_fr'] ?></em>
+                    <?= htmlspecialchars($post['title']) ?>
+                    <em class="date"><br> le <?= $post['date_creation_fr'] ?></em>
                 </span>
 
 
                 <hr class="">
 
                 <p class="black-text">
-                    <?= substr(nl2br($data['content']),0,200) ?>
+                    <?= substr(nl2br($post['content']),0,200) ?>
                     <br />
                     <em class="light-blue-text text-lighten-2">En savoir plus...</em>
                 </p>
@@ -32,7 +32,7 @@ while ($data = $posts->fetch())
                 <hr>
 
             <div class="nbrCom">
-                <p><?= $commentManager->getCount('post_id',$data['id']) ?> commentaire(s)</p>
+                <p><?= $commentManager->getCount('post_id',$post['id']) ?> commentaire(s)</p>
             </div>
         </a>
     </article>
