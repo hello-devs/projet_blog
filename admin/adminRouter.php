@@ -49,7 +49,6 @@ try
                 // Erreur ! On arrête tout, on envoie une exception, donc au saute directement au catch
                 throw new Exception('Aucun identifiant de commentaire envoyé');
             }
-
         }
 
 
@@ -88,7 +87,15 @@ try
         {
             if (isset($_GET['id']) && $_GET['id'] > 0)
             {
-                editPost($_GET['id']);  //Maj du post
+                if(!empty($_POST['titre']) AND !empty($_POST['contenu']))
+                {
+                    editPost($_GET['id']);  //Maj du post
+                }
+                else
+                {
+                    throw new Exception('Le champ "Titre de l\'article" et son contenu ne peuvent être vide');
+                }
+
             }
             else
             {
@@ -96,7 +103,7 @@ try
                 throw new Exception('Aucun identifiant d\'article envoyé');
             }
         }
-        elseif ($_GET['action'] == 'deletePost')
+        elseif ($_GET['action'] == 'deletePost')     //Suppression de l'article
         {
             if (isset($_GET['id']) && $_GET['id'] > 0)
             {

@@ -61,6 +61,7 @@
             <hr class="grey lighten-1">
         <?php
         }
+        $comments->closeCursor();
         ?>
 
 
