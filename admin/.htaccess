@@ -1,0 +1,7 @@
+AuthName "Page d'administration protégée"
+AuthType Basic
+
+
+AuthUserFile "D:\OneDrive\Documents\openclassroom\PARCOURS\dev junior web\real Dave\projet_blog_test_1\admin\.htpasswd"
+
+Require valid-user
