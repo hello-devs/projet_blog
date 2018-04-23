@@ -10,6 +10,9 @@
     <!-- Compiled and minified MAterialize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="public/css/style.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <!-- Compiled and minified JavaScript Materialize-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <!--Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Kalam|Montez" rel="stylesheet">
 
@@ -23,7 +26,7 @@
 
             <nav class="navbar-fixed blue-grey lighten-1">
                 <div>
-                    <a href="?action=bio">
+                    <a href="index.php">
                         <p id="logo" class="left">Jean Forteroche</p>
                     </a>
                 </div>
@@ -46,7 +49,7 @@
 
             </div>
             <div>
-                <p><span class="right "><a href="admin/adminRouter.php">admin </a></span></p>
+                <p><span class="right "><a href="?action=adminConnect">administration</a></span></p>
             </div>
         </footer>
 

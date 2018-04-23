@@ -6,6 +6,11 @@ function chargerClasseAdmin($class)
     require_once('../model/' . $class. '.php');
 }
 
+//Verifie donnée de connexion
+function verifUserAuth($logName,$pwd)
+{
+
+}
 
 
 //Accueil du Back Office
@@ -23,9 +28,8 @@ function manageBlog()
     $commentsToValidCount = $commentManager->getCount('valid','0');
     $commentsSignalCount = $commentManager->getCount('signall','1');
 
-    require('../view/backEnd/manageBlogView.php');
+    require('../view/backend/manageBlogView.php');
 }
-
 
 
 /////////////////////////////////Commentaires
@@ -39,7 +43,7 @@ function manageComs()
     $commentsAvalid = $commentManager->getAllComments('avalid');
     $commentsValid = $commentManager->getAllComments('valid');
 
-    require('../view/backEnd/manageComsView.php');
+    require('../view/backend/manageComsView.php');
 }
 
 //Validation d'un commentaire

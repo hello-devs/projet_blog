@@ -5,6 +5,13 @@ function chargerClasse($class)
     require_once('model/' . $class. '.php');
 }
 
+
+//Connexion au back Office
+function connectManagerBlog()
+{
+    require('view/frontend/connectManagerBlogView.php');
+}
+
 /////////////////////////////////////////////////////post
 
 //Affichage de tout les post
