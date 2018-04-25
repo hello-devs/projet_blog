@@ -162,6 +162,16 @@ function changerEtatPost($postId,$etat)
 }
 
 
+//Déconnexion de l'espace d'administration:
+function decoAdmin()
+{
+
+    session_destroy();
+
+    $errorMessage = "Vous avez été déconnecté !";
+    require('view/frontend/connectManagerBlogView.php');
+}
+
 
 
 

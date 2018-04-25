@@ -239,6 +239,10 @@ try
                     throw new Exception('Aucun identifiant d\'article envoyé');
                 }
             }
+            elseif($_GET['action'] == 'decoAdmin')
+            {
+                decoAdmin();
+            }
             else
             {
                 manageBlog();

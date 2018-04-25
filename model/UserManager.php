@@ -55,15 +55,13 @@ class UserManager extends Manager
             }
             else
             {
-                echo '<br>Mot de passe correct<br><br>';
+                //L'utilisateur est authentifier:
 
+                //On Créait un User avec les données récupérées en db
                 $user = new User($existLog);
-
                 $_SESSION['user'] = $user;
 
-
-                var_dump($_SESSION['user']);
-
+                //On passe le status de la session à authentifié
                 $_SESSION['authentified'] = true;
 
                 return self::USER_VERIFIED;
