@@ -22,7 +22,7 @@
 <body class="grey lighten-5">
 
     <div class="row">
-        <header class="s12">
+        <header class="col s12">
 
             <nav class="navbar-fixed blue-grey lighten-1">
                 <div>
