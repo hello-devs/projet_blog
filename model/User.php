@@ -1,16 +1,16 @@
 <?php
 class User
 {
-    protected $_id,$_logName,$_passHash;
+    protected $id,$logName,$passHash;
 
     //Construct and hydrate
 
     public function __construct(array $donnees)
     {
-        $this->_hydrate($donnees);
+        $this->hydrate($donnees);
     }
 
-    protected function _hydrate(array $donnees)
+    protected function hydrate(array $donnees)
     {
         foreach ($donnees as $key => $value)
         {
@@ -30,30 +30,36 @@ class User
 
     public function id()
     {
-        return $this->_id;
+        return $this->id;
     }
     public function logName()
     {
-        return $this->_logName;
+        return $this->logName;
     }
     public function passHash()
     {
-        return $this->_passHash;
+        return $this->passHash;
     }
 
     //Setters
 
     public function setId($id)
     {
-        $this->_id = $id;
+        $this->id = $id;
     }
     public function setLogName($logName)
     {
-        $this->_logName = $logName;
+        $this->logName = $logName;
     }
     public function setPassHash($passHash)
     {
-        $this->_passHash = $passHash;
+        $this->passHash = $passHash;
+    }
+
+    /////////////////////////////////////
+    public function __sleep()
+    {
+        return ['logName'];
     }
 
 }

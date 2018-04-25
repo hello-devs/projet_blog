@@ -1,14 +1,41 @@
 <?php
-
+/*
 // Chargement des classes
 function chargerClasseAdmin($class)
 {
     require_once('../model/' . $class. '.php');
 }
+*/
 
 //Verifie donnée de connexion
 function verifUserAuth($logName,$pwd)
 {
+    //Vérification de l'existance de l'utilisateur
+    $userManager = new UserManager();
+    $tryConnect = $userManager->verifLog($logName,$pwd);
+
+    switch($tryConnect)
+    {
+        case UserManager::PSEUDO_INCONNU:
+
+            $errorMessage = "Cet utilisateur n'existe pas";
+            require('view/frontend/connectManagerBlogView.php');
+            break;
+
+        case UserManager::MOT_DE_PASSE_INCORRECT:
+
+            $errorMessage = "Le nom d'utilisateur et le mot de passe ne correspondent pas";
+            require('view/frontend/connectManagerBlogView.php');
+            break;
+
+        case UserManager::USER_VERIFIED;
+
+            manageBlog();
+            break;
+    }
+
+
+
 
 }
 
@@ -20,7 +47,6 @@ function manageBlog()
     $postManager = new PostManager(); // Création d'un objet
     $posts = $postManager->getPosts('all'); // Appel d'une fonction de cet objet
 
-
     //recup des coms et comptage
     $commentManager = new CommentManager();
     $comments = $commentManager->getAllComments('all');
@@ -28,7 +54,7 @@ function manageBlog()
     $commentsToValidCount = $commentManager->getCount('valid','0');
     $commentsSignalCount = $commentManager->getCount('signall','1');
 
-    require('../view/backend/manageBlogView.php');
+    require('view/backend/manageBlogView.php');
 }
 
 
@@ -43,7 +69,7 @@ function manageComs()
     $commentsAvalid = $commentManager->getAllComments('avalid');
     $commentsValid = $commentManager->getAllComments('valid');
 
-    require('../view/backend/manageComsView.php');
+    require('view/backend/manageComsView.php');
 }
 
 //Validation d'un commentaire
@@ -73,7 +99,7 @@ function managePosts()
     $postManager = new PostManager();
     $posts = $postManager->getPosts('all');
 
-    require('../view/backend/managePostsView.php');
+    require('view/backend/managePostsView.php');
 }
 
 //Gestion des articles
@@ -82,7 +108,7 @@ function managePosts()
 //Création d'un article
 function createArticle()
 {
-    require('../view/backend/addPostView.php');
+    require('view/backend/addPostView.php');
 }
 
 //Insertion d'un article dans la bdd
@@ -104,7 +130,7 @@ function managePost($id , $message = null)
     $post = $postManager->getPost($id);
     $comments = $commentManager->getComments($id);
 
-    require('../view/backend/managePostView.php');
+    require('view/backend/managePostView.php');
 }
 
 //Mise à jour d'un article

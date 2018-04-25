@@ -49,7 +49,7 @@
 
             </div>
             <div>
-                <p><span class="right "><a href="?action=adminConnect">administration</a></span></p>
+                <p class=""><span class="right"><a class="white-text" href="?action=adminConnect">ADMINISTRATION </a></span> </p>
             </div>
         </footer>
 

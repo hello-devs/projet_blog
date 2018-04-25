@@ -91,14 +91,19 @@ try
             {
                 if(isset($_POST['logName']) && isset($_POST['pwd']))
                 {
-                    verifUserAuth()
+                    verifUserAuth($_POST['logName'],$_POST['pwd']);
                 }
                 else
                 {
                     throw new Exception('Identifiants ou mot de passe non conforme!');
                 }
             }
+            else
+            {
+                listPosts();
+            }
         }
+
         elseif($_SESSION['authentified'] == true)
         {
 
@@ -234,9 +239,12 @@ try
                     throw new Exception('Aucun identifiant d\'article envoyé');
                 }
             }
+            else
+            {
+                manageBlog();
+            }
         }
 /////////////////////////////////////////////Fin Admin
-
     }
     else
     {

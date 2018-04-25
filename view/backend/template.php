@@ -37,6 +37,9 @@
                         <li><a href="?action=manageArticles">Gestion des articles</a></li>
                         <li><a href="?action=manageComs">Gestion des commentaires</a></li>
                     </ul>
+                    <ul class="navbar-nav right">
+                        <li class="left"><a href="?action=deco"><?= ucfirst($_SESSION['user']->logName()) ?> (se déconnecter)</a></li>
+                    </ul>
                 </nav>
             </header>
         </div>

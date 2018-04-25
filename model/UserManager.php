@@ -7,6 +7,11 @@ class UserManager extends Manager
 
     private $_user,$_db;
 
+    const PSEUDO_INCONNU = 1 ;
+    const MOT_DE_PASSE_INCORRECT = 2 ;
+    const USER_VERIFIED = 3;
+
+
 
     public function __construct()
     {
@@ -22,19 +27,56 @@ class UserManager extends Manager
     //Setters
     private function setDb($db)
     {
-        $this->_db = $db
+        $this->_db = $db;
     }
+
+
+    //verif de l'existance du logName et correspondance pwd
+    public function verifLog($logName,$pwd)
+    {
+        $req = $this->_db->prepare('SELECT * FROM users WHERE logName = :logName');
+        $req->execute(array('logName' => $logName));
+
+        $existLog = $req->fetch();
+
+        if($existLog == null)
+        {
+            return self::PSEUDO_INCONNU;
+        }
+        else
+        {
+            //On verifie la correspondance mdp avec le pass en db
+            //$passHash = password_hash($pwd,PASSWORD_DEFAULT);
+            $passHashBdd = $existLog['passHash'];
+
+            if(!password_verify($pwd,$existLog['passHash']))
+            {
+                return self::MOT_DE_PASSE_INCORRECT;
+            }
+            else
+            {
+                echo '<br>Mot de passe correct<br><br>';
+
+                $user = new User($existLog);
+
+                $_SESSION['user'] = $user;
+
+
+                var_dump($_SESSION['user']);
+
+                $_SESSION['authentified'] = true;
+
+                return self::USER_VERIFIED;
+            }
+
+        }
+    }
+
+
+
+
 
 
 
 }
 
-
-
-/*
-        $this->_user =(
-            'id' => $user->id(),
-            'name' => $user->name(),
-            'passHash' $user->passHash()
-        );
-*/
