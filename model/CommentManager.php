@@ -1,14 +1,7 @@
 <?php
-//solution temporaire routeur dossier different
 
-if (file_exists('model/Manager.php'))
-{
-    require_once('model/Manager.php');
-}
-else
-{
-    require_once('../model/Manager.php');
-}
+require_once('model/Manager.php');
+
 
 
 class CommentManager extends Manager
