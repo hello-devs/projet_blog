@@ -97,4 +97,4 @@
 
 
 
-<?php require('../view/backend/template.php') ?>
+<?php require('view/backend/template.php') ?>

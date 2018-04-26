@@ -24,7 +24,7 @@
 </head>
 
 <body class="grey lighten-2">
-    <div class="container-fluid">
+    <div class="">
         <div class="row bandeau">
             <p class="bandeau card center s12">Espace d' administration du Blog</p>
         </div>
@@ -36,6 +36,11 @@
                         <li><a href="?action=manageBlog">Tableau de bord</a></li>
                         <li><a href="?action=manageArticles">Gestion des articles</a></li>
                         <li><a href="?action=manageComs">Gestion des commentaires</a></li>
+                        <li><a href="?action=listPosts" target="_blank">Retour au site</a></li>
+
+                    </ul>
+                    <ul class="navbar-nav right">
+                        <li class="left"><a href="?action=decoAdmin"><?= ucfirst($_SESSION['user']->logName()) ?> (se déconnecter)</a></li>
                     </ul>
                 </nav>
             </header>
@@ -51,11 +56,6 @@
 
 
         <footer class="blue-grey lighten-1 z-depth-2">
-            <div class="container">
-                <div class="">
-                    <p><span class=" ">copyright </span></p>
-                </div>
-            </div>
 
         </footer>
 

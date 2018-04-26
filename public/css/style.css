@@ -48,21 +48,28 @@ h1 + p
 */
 .articleCards
 {
-    height: 318px;
+    height: 320px;
     margin-left: 1em !important;
     margin-right: 1em !important;
+    display: flex;
+    flex-direction: column;
 }
 
-.articleCards .apercuArticle
+.apercuArticle
 {
-    height: 295px;
+    height: 252px;
+    overflow-y: hidden;
+
 }
 
-.articleCards .nbrCom
+
+.nbrComs
 {
     display: flex;
     justify-content: flex-end;
+    font-size: 0.9em;
 }
+
 
 article span
 {
