@@ -22,7 +22,7 @@
 <body class="grey lighten-5">
 
     <div class="row">
-        <header class="col s12">
+        <header class="">
 
             <nav class="navbar-fixed blue-grey lighten-1">
                 <div>
@@ -45,11 +45,9 @@
     <?= $content ?>
 
         <footer class="blue-grey lighten-1 z-depth-2">
-            <div>
 
-            </div>
-            <div>
-                <p class=""><span class="right"><a class="white-text" href="?action=adminConnect">ADMINISTRATION </a></span> </p>
+            <div class="container">
+                <p><span class="right card grey"><a class="white-text" href="?action=adminConnect">ADMINISTRATION </a></span> </p>
             </div>
         </footer>
 
