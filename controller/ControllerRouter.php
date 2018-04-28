@@ -1,6 +1,6 @@
 <?php
 
-class Routeur
+class ControllerRouter
 {
     protected $ctrlFrontEnd, $ctrlBackEnd;
 
@@ -8,7 +8,6 @@ class Routeur
     {
         $this->ctrlFrontEnd = new ControllerFrontEnd();
         $this->ctrlBackEnd = new ControllerBackEnd();
-
     }
 
 
