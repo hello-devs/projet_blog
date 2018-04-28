@@ -1,7 +1,7 @@
 <?php
 
-require('controler/frontEnd.php');
-require('controler/backEnd.php');
+require('controller/frontEnd.php');
+require('controller/backEnd.php');
 
 //autoload
 spl_autoload_register('chargerClasse');

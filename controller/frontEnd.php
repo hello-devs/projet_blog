@@ -40,7 +40,7 @@ function post($postId)
 
 ////////////////////////////////////////////////////commentaires
 
-//
+//Ajouter un commentaire
 function addComment($postId, $author, $comment)
 {
     $commentManager = new CommentManager();
@@ -57,7 +57,7 @@ function addComment($postId, $author, $comment)
     }
 }
 
-
+//Signaler un commentaire
 function signalComment($comId,$postId)
 {
     $commentManager = new CommentManager();

@@ -6,8 +6,8 @@ class Routeur
 
     public function __construct()
     {
-        $this->ctrlFrontEnd = new ControleurFrontEnd();
-        $this->ctrlBackEnd = new ControleurBackEnd();
+        $this->ctrlFrontEnd = new ControllerFrontEnd();
+        $this->ctrlBackEnd = new ControllerBackEnd();
 
     }
 
