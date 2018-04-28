@@ -1,11 +1,5 @@
 <?php
 
-require('controller/ControllerfrontEnd.php');
-require('controller/ControllerbackEnd.php');
-
-
-
-//
 function loadClass($class)
 {
 
