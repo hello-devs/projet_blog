@@ -4,12 +4,23 @@ class ControllerBackEnd
 {
 
 
+    protected $userManager,$postManager,$commentManager;
+
+    //Constructeur
+    public function __construct()
+    {
+        $this->userManager = new UserManager();
+        $this->postManager = new PostManager();
+        $this->commentManager = new CommentManager();
+    }
+
+
+//////////////////////////////////////////////////////////////////
     //Verifie donnée de connexion
     public function verifUserAuth($logName,$pwd)
     {
         //Vérification de l'existance de l'utilisateur
-        $userManager = new UserManager();
-        $tryConnect = $userManager->verifLog($logName,$pwd);
+        $tryConnect = $this->userManager->verifLog($logName,$pwd);
 
         switch($tryConnect)
         {
@@ -41,15 +52,13 @@ class ControllerBackEnd
     public function manageBlog()
     {
         //recup des posts
-        $postManager = new PostManager(); // Création d'un objet
-        $posts = $postManager->getPosts('all'); // Appel d'une fonction de cet objet
+        $posts = $this->postManager->getPosts('all'); // Appel d'une fonction de cet objet
 
         //recup des coms et comptage
-        $commentManager = new CommentManager();
-        $comments = $commentManager->getAllComments('all');
-        $commentsValidCount = $commentManager->getCount('valid','1');
-        $commentsToValidCount = $commentManager->getCount('valid','0');
-        $commentsSignalCount = $commentManager->getCount('signall','1');
+        $comments = $this->commentManager->getAllComments('all');
+        $commentsValidCount = $this->commentManager->getCount('valid','1');
+        $commentsToValidCount = $this->commentManager->getCount('valid','0');
+        $commentsSignalCount = $this->commentManager->getCount('signall','1');
 
         require('view/backend/manageBlogView.php');
     }
@@ -61,10 +70,9 @@ class ControllerBackEnd
     public function manageComs()
     {
         //recup des coms et comptage
-        $commentManager = new CommentManager();
-        $commentsSignal = $commentManager->getAllComments('signal');
-        $commentsAvalid = $commentManager->getAllComments('avalid');
-        $commentsValid = $commentManager->getAllComments('valid');
+        $commentsSignal = $this->commentManager->getAllComments('signal');
+        $commentsAvalid = $this->commentManager->getAllComments('avalid');
+        $commentsValid = $this->commentManager->getAllComments('valid');
 
         require('view/backend/manageComsView.php');
     }
@@ -72,8 +80,7 @@ class ControllerBackEnd
     //Validation d'un commentaire
     public function validCom($comId)
     {
-        $commentManager = new CommentManager();
-        $commentManager->validComment($comId);
+        $this->commentManager->validComment($comId);
 
         $this->manageComs();
     }
@@ -81,8 +88,7 @@ class ControllerBackEnd
     //Effacer un commentaire
     public function deleteCom($comId)
     {
-        $commentManager = new CommentManager();
-        $commentManager->deleteComment($comId);
+        $this->commentManager->deleteComment($comId);
 
         $this->manageComs();
     }
@@ -93,8 +99,7 @@ class ControllerBackEnd
     public function managePosts()
     {
          //recup des posts
-        $postManager = new PostManager();
-        $posts = $postManager->getPosts('all');
+        $posts = $this->postManager->getPosts('all');
 
         require('view/backend/managePostsView.php');
     }
@@ -111,8 +116,7 @@ class ControllerBackEnd
     //Insertion d'un article dans la bdd
     public function ajouterPost()
     {
-        $postManager = new PostManager();
-        $newPost = $postManager->ajouterPost();
+        $newPost = $this->postManager->ajouterPost();
 
         $this->managePost($newPost['id'],$newPost['message']);
     }
@@ -120,12 +124,8 @@ class ControllerBackEnd
     //Gestion d'un article
     public function managePost($id , $message = null)
     {
-        //
-        $postManager = new PostManager();
-        $commentManager = new CommentManager();
-
-        $post = $postManager->getPost($id);
-        $comments = $commentManager->getComments($id);
+        $post = $this->postManager->getPost($id);
+        $comments = $this->commentManager->getComments($id);
 
         require('view/backend/managePostView.php');
     }
@@ -133,8 +133,7 @@ class ControllerBackEnd
     //Mise à jour d'un article
     public function editPost($postId)
     {
-        $postManager = new PostManager();
-        $message = $postManager->editPost($postId);
+        $message = $this->postManager->editPost($postId);
 
         $this->managePost($postId);
     }
@@ -142,8 +141,7 @@ class ControllerBackEnd
     //Supprimer un article
     public function deletePost($postId)
     {
-        $postManager = new PostManager();
-        $postManager->deletePost($postId);
+        $this->postManager->deletePost($postId);
 
         $this->managePosts();
     }
@@ -152,8 +150,7 @@ class ControllerBackEnd
     //Mise à jour d'un article
     public function changerEtatPost($postId,$etat)
     {
-        $postManager = new PostManager();
-        $postManager->changeEtatPost($postId, $etat);
+        $this->postManager->changeEtatPost($postId, $etat);
 
         $this->managePost($postId);
     }

@@ -2,6 +2,14 @@
 
 class ControllerFrontEnd
 {
+    protected $commentManager,$postManager;
+
+    //Constructeur
+    public function __construct()
+    {
+        $this->postManager = new PostManager();
+        $this->commentManager = new CommentManager();
+    }
 
     //Connexion au back Office
     public function connectManagerBlog()
@@ -14,10 +22,7 @@ class ControllerFrontEnd
     //Affichage de tout les post
     public function listPosts()
     {
-        $postManager = new PostManager(); // Création d'un objet
-        $posts = $postManager->getPosts('publié'); // Appel d'une fonction de cet objet
-
-        $commentManager = new CommentManager();
+        $posts = $this->postManager->getPosts('publié'); // Appel d'une fonction de cet objet
 
         require('view/frontend/listPostView.php');
     }
@@ -25,11 +30,8 @@ class ControllerFrontEnd
     //Affiche un post et ses commentaires
     public function post($postId)
     {
-        $postManager = new PostManager();
-        $commentManager = new CommentManager();
-
-        $post = $postManager->getPost($postId);
-        $comments = $commentManager->getComments($postId);
+        $post = $this->postManager->getPost($postId);
+        $comments = $this->commentManager->getComments($postId);
 
         require('view/frontend/postView.php');
     }
@@ -40,9 +42,7 @@ class ControllerFrontEnd
     //Ajouter un commentaire
     public function addComment($postId, $author, $comment)
     {
-        $commentManager = new CommentManager();
-
-        $affectedLines = $commentManager->postComment($postId, $author, $comment);
+        $affectedLines = $this->commentManager->postComment($postId, $author, $comment);
 
         if ($affectedLines === false) {
             throw new Exception('Impossible d\'ajouter le commentaire !');
@@ -57,10 +57,9 @@ class ControllerFrontEnd
     //Signaler un commentaire
     public function signalComment($comId,$postId)
     {
-        $commentManager = new CommentManager();
-        $commentManager->signalComment($comId);
+        $this->commentManager->signalComment($comId);
 
-        post($postId);
+        $this->post($postId);
     }
 
     /////////////////////////////////////////////////////biographie
