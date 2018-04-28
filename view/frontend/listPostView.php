@@ -36,7 +36,7 @@ while ($post = $posts->fetch())
             <hr>
 
             <div>
-                <p class="nbrComs"><?= $commentManager->getCount('post_id',$post['id']) ?> commentaire(s)</p>
+                <p class="nbrComs"><?= $this->commentManager->getCount('post_id',$post['id']) ?> commentaire(s)</p>
             </div>
         </a>
 
