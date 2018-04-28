@@ -65,7 +65,9 @@ class ControllerFrontEnd
     /////////////////////////////////////////////////////biographie
     public function bio()
     {
-        require('view/frontend/bioView.php');
+        $view = new View('bio','frontend');
+        $view->generer(['bio']);
+       // require('view/frontend/bioView.php');
     }
 
     /////////////////////////////////////////////////////contact
