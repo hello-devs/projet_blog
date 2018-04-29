@@ -2,7 +2,14 @@
 
 <div class="container">
     <div class="row">
-        <form class="col s12 m10 offset-m1  card-panel" action="#">
+
+        <?php if(isset($messageSend)): ?>
+        <div class="col s12 m10 offset-m1  card-panel ">
+            <h5 class="orange-text text-lighten-1"><?= $messageSend ?></h5>
+        </div>
+        <?php endif; ?>
+
+        <form class="col s12 m10 offset-m1  card-panel" action="?action=contact" method="post">
             <div class="row">
                 <div class="input-field col s6">
                     <label for="first_name">Prénom</label>
@@ -25,7 +32,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <label for="email">Email</label>
-                    <input id="email" type="email" class="validate">
+                    <input id="email" type="email" name="email" class="validate">
 
                 </div>
             </div>

@@ -73,8 +73,14 @@ class ControllerRouter
                 }
                 elseif ($_GET['action'] == 'contact')
                 {
-                    //
-                    $this->ctrlFrontEnd->contact();
+                    if(isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['message']) && isset($_POST['email']))
+                    {
+                        $this->ctrlFrontEnd->sendMail();
+                    }
+                    else
+                    {
+                        $this->ctrlFrontEnd->contact();
+                    }
                 }
 
 
@@ -207,7 +213,7 @@ class ControllerRouter
                             throw new ExceptionBack('Aucun identifiant de billet envoyé');
                         }
                     }
-                    elseif ($_GET['action'] == 'changerEtatPost')     //Edition d'un article
+                    elseif ($_GET['action'] == 'changerEtatPost')
                     {
                         if (isset($_GET['id']) && $_GET['id'] > 0)
                         {
