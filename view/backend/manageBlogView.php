@@ -1,8 +1,5 @@
 <?php $title = 'Admin du Blog'; ?>
 
-
-<?php ob_start(); ?>
-
 <div id="moderation" class="section">
     <div class="row bandeau">
         <p class="bandeau card center s12">Modération des commentaires</p>
@@ -91,10 +88,3 @@
     </div>
 
 </div>
-
-<?php $content = ob_get_clean(); ?>
-
-
-
-
-<?php require('view/backend/template.php') ?>

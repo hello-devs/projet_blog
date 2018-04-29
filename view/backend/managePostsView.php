@@ -1,7 +1,5 @@
 <?php $title = 'Admin du Blog - Gestion Articles'; ?>
 
-
-
 <?php ob_start(); ?>
 
 
@@ -75,10 +73,3 @@
        </div>
     </div>
 
-
-
-
-
-<?php $content = ob_get_clean(); ?>
-
-<?php require('view/backend/template.php') ?>

@@ -79,7 +79,7 @@ class PostManager extends Manager
             'content' => $_POST['contenu'],
             'postId' => $postId));
 
-        return 'MESSAGE MIS &Agrave; JOUR';
+        return 'POST MIS &Agrave; JOUR';
     }
 
     //Effacer un article (d)

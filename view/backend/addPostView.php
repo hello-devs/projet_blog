@@ -1,7 +1,5 @@
 <?php $title = 'Mon blog - NOUVEL ARTICLE'; ?>
 
-<?php ob_start(); ?>
-
 <div class="container">
    <div class="row">
            <h1 class="card light-blue-text text-lighten-1 z-depth-2">NOUVEL ARTICLE</h1>
@@ -30,8 +28,3 @@
         </div>
     </div>
 </div>
-
-
-<?php $content = ob_get_clean(); ?>
-
-<?php require('view/backend/template.php'); ?>

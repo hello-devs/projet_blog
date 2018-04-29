@@ -27,13 +27,16 @@ class ControllerBackEnd
             case UserManager::PSEUDO_INCONNU:
 
                 $errorMessage = "Cet utilisateur n'existe pas";
-                require('view/frontend/connectManagerBlogView.php');
+
+                $view = new View('connectManagerBlog','frontend');
+                $view->generer(['errorMessage' => $errorMessage]);
                 break;
 
             case UserManager::MOT_DE_PASSE_INCORRECT:
 
                 $errorMessage = "Le nom d'utilisateur et le mot de passe ne correspondent pas";
-                require('view/frontend/connectManagerBlogView.php');
+                $view = new View('connectManagerBlog','frontend');
+                $view->generer(['errorMessage' => $errorMessage]);
                 break;
 
             case UserManager::USER_VERIFIED;
@@ -60,7 +63,13 @@ class ControllerBackEnd
         $commentsToValidCount = $this->commentManager->getCount('valid','0');
         $commentsSignalCount = $this->commentManager->getCount('signall','1');
 
-        require('view/backend/manageBlogView.php');
+         $view = new View('manageBlog','backend');
+         $view->generer([
+             'posts' => $posts,
+             'comments' => $comments,
+             'commentsValidCount' => $commentsValidCount,
+             'commentsToValidCount' => $commentsToValidCount,
+             'commentsSignalCount' => $commentsSignalCount]);
     }
 
 
@@ -74,7 +83,11 @@ class ControllerBackEnd
         $commentsAvalid = $this->commentManager->getAllComments('avalid');
         $commentsValid = $this->commentManager->getAllComments('valid');
 
-        require('view/backend/manageComsView.php');
+        $view = new View('manageComs','backend');
+        $view->generer([
+             'commentsSignal' => $commentsSignal,
+             'commentsAvalid' => $commentsAvalid,
+             'commentsValid' => $commentsValid]);
     }
 
     //Validation d'un commentaire
@@ -101,7 +114,8 @@ class ControllerBackEnd
          //recup des posts
         $posts = $this->postManager->getPosts('all');
 
-        require('view/backend/managePostsView.php');
+        $view = new View('managePosts','backend');
+        $view->generer(['posts' => $posts]);
     }
 
     //Gestion des articles
@@ -110,7 +124,8 @@ class ControllerBackEnd
     //Création d'un article
     public function createArticle()
     {
-        require('view/backend/addPostView.php');
+        $view = new View('addPost','backend');
+        $view->generer(['addPost']);
     }
 
     //Insertion d'un article dans la bdd
@@ -127,7 +142,11 @@ class ControllerBackEnd
         $post = $this->postManager->getPost($id);
         $comments = $this->commentManager->getComments($id);
 
-        require('view/backend/managePostView.php');
+        $view = new View('managePost','backend');
+        $view->generer([
+            'message' => $message,
+            'post' => $post,
+            'comments' => $comments]);
     }
 
     //Mise à jour d'un article
@@ -135,7 +154,7 @@ class ControllerBackEnd
     {
         $message = $this->postManager->editPost($postId);
 
-        $this->managePost($postId);
+        $this->managePost($postId,$message);
     }
 
     //Supprimer un article
@@ -163,7 +182,8 @@ class ControllerBackEnd
         session_destroy();
 
         $errorMessage = "Vous avez été déconnecté !";
-        require('view/frontend/connectManagerBlogView.php');
+        $view = new View('connectManagerBlog','frontend');
+        $view->generer(['errorMessage' => $errorMessage]);
     }
 
 }
