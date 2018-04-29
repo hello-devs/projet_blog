@@ -14,7 +14,8 @@ class ControllerFrontEnd
     //Connexion au back Office
     public function connectManagerBlog()
     {
-        require('view/frontend/connectManagerBlogView.php');
+        $view = new View('connectManagerBlog','frontend');
+        $view->generer(['connect']);
     }
 
     /////////////////////////////////////////////////////post
@@ -23,8 +24,10 @@ class ControllerFrontEnd
     public function listPosts()
     {
         $posts = $this->postManager->getPosts('publié'); // Appel d'une fonction de cet objet
+        $commentManager = $this->commentManager;
 
-        require('view/frontend/listPostView.php');
+        $view = new View('listPost','frontend');
+        $view->generer(['posts' => $posts, 'commentManager' => $commentManager]);
     }
 
     //Affiche un post et ses commentaires
@@ -33,7 +36,8 @@ class ControllerFrontEnd
         $post = $this->postManager->getPost($postId);
         $comments = $this->commentManager->getComments($postId);
 
-        require('view/frontend/postView.php');
+        $view = new View('post','frontend');
+        $view->generer(['post' => $post, 'comments' => $comments]);
     }
 
 
@@ -44,13 +48,13 @@ class ControllerFrontEnd
     {
         $affectedLines = $this->commentManager->postComment($postId, $author, $comment);
 
-        if ($affectedLines === false) {
+        if ($affectedLines === false)
+        {
             throw new Exception('Impossible d\'ajouter le commentaire !');
         }
         else
         {
-            //Retour à l'affichage du post   !!! essayer post($postId);
-            header('Location: index.php?action=post&id=' . $postId);
+            $this->post($postId);
         }
     }
 
@@ -67,13 +71,13 @@ class ControllerFrontEnd
     {
         $view = new View('bio','frontend');
         $view->generer(['bio']);
-       // require('view/frontend/bioView.php');
     }
 
     /////////////////////////////////////////////////////contact
     public function contact()
     {
-        require('view/frontend/contactView.php');
+       $view = new View('contact','frontend');
+       $view->generer(['contact']);
     }
 
 }
