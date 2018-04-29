@@ -7,6 +7,10 @@ function loadClass($class)
     {
         require_once('controller/' . $class. '.php');
     }
+    elseif(preg_match('/^View$/',$class))
+    {
+        require_once('view/View.php');
+    }
     else
     {
         require_once('model/' . $class. '.php');

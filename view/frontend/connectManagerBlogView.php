@@ -1,7 +1,5 @@
 <?php $title = 'Mon blog- Connexion'; ?>
 
-<?php ob_start(); ?>
-
 <div class="container">
     <?php if(isset($errorMessage)):?>
     <h2 class="card center valign-wrapper red-text">
@@ -58,9 +56,3 @@
     </div>
 </div>
 
-
-
-
-<?php $content = ob_get_clean(); ?>
-
-<?php require('view/frontend/template.php'); ?>

@@ -1,7 +1,5 @@
 <?php $title = 'Mon blog - Accueil'; ?>
 
-<?php ob_start(); ?>
-
 <p class="card center">Derniers billets du blog :</p>
 <div class="container">
 <div class="row">
@@ -36,7 +34,7 @@ while ($post = $posts->fetch())
             <hr>
 
             <div>
-                <p class="nbrComs"><?= $this->commentManager->getCount('post_id',$post['id']) ?> commentaire(s)</p>
+                <p class="nbrComs"><?= $commentManager->getCount('post_id',$post['id']) ?> commentaire(s)</p>
             </div>
         </a>
 
@@ -50,9 +48,3 @@ $posts->closeCursor();
 
 </div>
 </div>
-
-<?php $content = ob_get_clean(); ?>
-
-<?php require('view/frontend/template.php'); ?>
-
-

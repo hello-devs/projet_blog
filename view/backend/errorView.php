@@ -1,6 +1,5 @@
 <?php $title = 'Mon blog'; ?>
 
-<?php ob_start(); ?>
 
 <div class="container">
 
@@ -12,8 +11,3 @@
 </div>
 
 
-
-
-<?php $content = ob_get_clean(); ?>
-
-<?php require('view/backend/template.php'); ?>

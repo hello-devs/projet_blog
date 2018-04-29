@@ -94,7 +94,7 @@ class ControllerRouter
                         }
                         else
                         {
-                            throw new Exception('Identifiants ou mot de passe non conforme!');
+                            throw new ExceptionBack('Identifiants ou mot de passe non conforme!');
                         }
                     }
                     else
@@ -105,8 +105,6 @@ class ControllerRouter
 
                 elseif($_SESSION['authentified'] == true)
                 {
-
-                    ////////////////
                     if ($_GET['action'] == 'manageBlog')  //Tableau de bord de l'admin
                     {
                         $this->ctrlBackEnd->manageBlog();
@@ -128,7 +126,7 @@ class ControllerRouter
                         else
                         {
                             // Erreur ! On arrête tout, on envoie une exception, donc au saute directement au catch
-                            throw new Exception('Aucun identifiant de commentaire envoyé');
+                            throw new ExceptionBack('Aucun identifiant de commentaire envoyé');
                         }
 
                     }
@@ -141,7 +139,7 @@ class ControllerRouter
                         else
                         {
                             // Erreur ! On arrête tout, on envoie une exception, donc au saute directement au catch
-                            throw new Exception('Aucun identifiant de commentaire envoyé');
+                            throw new ExceptionBack('Aucun identifiant de commentaire envoyé');
                         }
                     }
 
@@ -174,7 +172,7 @@ class ControllerRouter
                         else
                         {
                             // Erreur ! On arrête tout, on envoie une exception, donc au saute directement au catch
-                            throw new Exception('Aucun identifiant d\'article envoyé');
+                            throw new ExceptionBack('Aucun identifiant d\'article envoyé');
                         }
                     }
                     elseif ($_GET['action'] == 'editPost')     //Edition d'un article
@@ -187,14 +185,14 @@ class ControllerRouter
                             }
                             else
                             {
-                                throw new Exception('Le champ "Titre de l\'article" et son contenu ne peuvent être vide');
+                                throw new ExceptionBack('Le champ "Titre de l\'article" et son contenu ne peuvent être vide');
                             }
 
                         }
                         else
                         {
                             // Erreur ! On arrête tout, on envoie une exception, donc au saute directement au catch
-                            throw new Exception('Aucun identifiant d\'article envoyé');
+                            throw new ExceptionBack('Aucun identifiant d\'article envoyé');
                         }
                     }
                     elseif ($_GET['action'] == 'deletePost')     //Suppression de l'article
@@ -206,7 +204,7 @@ class ControllerRouter
                         else
                         {
                             // Autre exception
-                            throw new Exception('Aucun identifiant de billet envoyé');
+                            throw new ExceptionBack('Aucun identifiant de billet envoyé');
                         }
                     }
                     elseif ($_GET['action'] == 'changerEtatPost')     //Edition d'un article
@@ -222,19 +220,19 @@ class ControllerRouter
                                 }
                                 else
                                 {
-                                    throw new Exception('Cet état ne convient pas a un article');
+                                    throw new ExceptionBack('Cet état ne convient pas a un article');
                                 }
                             }
                             else
                             {
                                 // Erreur ! On arrête tout, on envoie une exception, donc au saute directement au catch
-                                throw new Exception('Aucun état d\'article envoyé');
+                                throw new ExceptionBack('Aucun état d\'article envoyé');
                             }
                         }
                         else
                         {
                             // Erreur ! On arrête tout, on envoie une exception, donc au saute directement au catch
-                            throw new Exception('Aucun identifiant d\'article envoyé');
+                            throw new ExceptionBack('Aucun identifiant d\'article envoyé');
                         }
                     }
                     elseif($_GET['action'] == 'decoAdmin')
@@ -253,11 +251,22 @@ class ControllerRouter
                 $this->ctrlFrontEnd->listPosts();
             }
         }
+        /////////////////////////////////////////////Erreurs
+        //Affichage des erreurs du backend
+        catch(ExceptionBack $e)  // S'il y a eu une erreur, alors...
+        {
+            $errorMessage = $e;
+            $view = new View('error','backend');
+            $view->generer(['errorMessage' => $errorMessage]);
+        }
+        //Affichage des erreurs du frontend
         catch(Exception $e)  // S'il y a eu une erreur, alors...
         {
             $errorMessage = $e->getMessage();
-            require('view/frontend/errorView.php');
+            $view = new View('error','frontend');
+            $view->generer(['errorMessage' => $errorMessage]);
         }
+
 
     }
 

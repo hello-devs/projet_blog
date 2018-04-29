@@ -1,11 +1,6 @@
 <?php $title = 'Admin du Blog - Commentaires'; ?>
 
 
-
-<?php ob_start(); ?>
-
-
-
 <div id="signall">
     <div class="row bandeau">
         <p class="bandeau card center s12">Commentaire(s) signalé(s):</p>
@@ -156,10 +151,3 @@
     </div>
 
 </div>
-
-
-
-
-<?php $content = ob_get_clean(); ?>
-
-<?php require('view/backend/template.php') ?>
