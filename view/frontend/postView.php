@@ -4,7 +4,7 @@
 <div class="row">
     <article class="col s12 m8 offset-m2 card-panel z-depth-2">
         <span class="card-title">
-            <?= htmlspecialchars($post['title']) ?>
+            <h2><?= htmlspecialchars($post['title']) ?></h2>
             <em class="date">le <?= $post['creation_date_fr'] ?></em>
         </span>
         <hr>
