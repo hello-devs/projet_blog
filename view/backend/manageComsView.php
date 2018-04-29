@@ -27,11 +27,11 @@
                     </td>
 
                     <td>
-                        <?= $commentaire['author'] ?>
+                        <?= htmlspecialchars($commentaire['author']) ?>
                     </td>
 
                     <td>
-                        <?= $commentaire['comment'] ?>
+                        <?= htmlspecialchars($commentaire['comment']) ?>
                     </td>
 
                     <td class="center-cell">
@@ -79,11 +79,11 @@
                     </td>
 
                     <td>
-                        <?= $commentaire['author'] ?>
+                        <?= htmlspecialchars($commentaire['author']) ?>
                     </td>
 
                     <td>
-                        <?= $commentaire['comment'] ?>
+                        <?= htmlspecialchars($commentaire['comment']) ?>
                     </td>
 
                     <td class="center-cell">
@@ -131,11 +131,11 @@
                     </td>
 
                     <td>
-                        <?= $commentaire['author'] ?>
+                        <?= htmlspecialchars($commentaire['author']) ?>
                     </td>
 
                     <td>
-                        <?= $commentaire['comment'] ?>
+                        <?= htmlspecialchars($commentaire['comment']) ?>
                     </td>
 
                     <td class="center-cell">

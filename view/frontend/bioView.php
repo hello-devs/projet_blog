@@ -1,7 +1,7 @@
 <?php $title = 'Mon blog - Biographie'; ?>
 
 <div class="container bio">
-    <aside id="photoBio"><img src="/public/imgs/busteH.png" alt="photo de l'auteur"></aside>
+    <aside id="photoBio"><img src="public/imgs/busteH.png" alt="photo de l'auteur"></aside>
     <p>  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur porro excepturi cumque facere doloribus corporis soluta officiis quae. Optio magni, amet at qui ipsum voluptate? Consequatur deleniti sapiente rerum ducimus!
     </p>
     <p>
