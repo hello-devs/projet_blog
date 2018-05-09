@@ -1,4 +1,4 @@
-<?php $title = 'Mon blog - Accueil'; ?>
+<?php $this->title = 'Mon blog - Accueil'; ?>
 
 <p class="card center">Derniers billets du blog :</p>
 <div class="container">

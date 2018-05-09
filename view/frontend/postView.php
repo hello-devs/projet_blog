@@ -1,4 +1,4 @@
-<?php $title='Mon Blog - '.$post['title']; ?>
+<?php $this->title = 'Mon Blog - '.$post['title']; ?>
 
 
 <div class="row">

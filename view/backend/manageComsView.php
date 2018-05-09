@@ -1,4 +1,4 @@
-<?php $title = 'Admin du Blog - Commentaires'; ?>
+<?php $this->title = 'Admin du Blog - Commentaires'; ?>
 
 
 <div id="signall">

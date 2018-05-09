@@ -1,4 +1,4 @@
-<?php $title = 'Admin du Blog - Gestion Articles'; ?>
+<?php $this->title = 'Admin du Blog - Gestion Articles'; ?>
 
 <?php ob_start(); ?>
 

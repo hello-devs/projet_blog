@@ -1,4 +1,4 @@
-<?php $title = 'Mon blog - Biographie'; ?>
+<?php $this->title = 'Mon blog - Biographie'; ?>
 
 <div class="container bio">
     <aside id="photoBio"><img src="public/imgs/busteH.png" alt="photo de l'auteur"></aside>

@@ -1,4 +1,4 @@
-<?php $title = 'Mon blog- Connexion'; ?>
+<?php $this->title = 'Mon blog- Connexion'; ?>
 
 <div class="container">
     <?php if(isset($errorMessage)):?>

@@ -1,4 +1,4 @@
-<?php $title = 'Mon blog'; ?>
+<?php $this->title = 'Mon blog'; ?>
 
 
 <div class="container">

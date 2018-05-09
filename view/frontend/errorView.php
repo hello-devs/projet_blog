@@ -1,4 +1,4 @@
-<?php $title = 'Mon blog - Erreur'; ?>
+<?php $this->title = 'Mon blog - Erreur'; ?>
 
 <div class="container">
 

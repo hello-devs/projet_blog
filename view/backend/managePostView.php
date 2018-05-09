@@ -1,4 +1,4 @@
-<?php $title = 'Admin - Gestion Article'; ?>
+<?php $this->title = 'Admin - Gestion Article'; ?>
 
 <div class="container">
    <div class="row">

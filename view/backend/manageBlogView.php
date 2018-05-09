@@ -1,4 +1,4 @@
-<?php $title = 'Admin du Blog'; ?>
+<?php $this->title = 'Admin du Blog'; ?>
 
 <div id="moderation" class="section">
     <div class="row bandeau">
