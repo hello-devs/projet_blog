@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Kalam|Montez" rel="stylesheet">
 
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 </head>
 
 <body class="grey lighten-5">
