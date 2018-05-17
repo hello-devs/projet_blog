@@ -24,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 </head>
 
-<body class="grey lighten-2">
+<body class="grey">
     <div class="">
         <div class="row bandeau">
             <p class="bandeau card center s12">Espace d' administration du Blog</p>
