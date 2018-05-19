@@ -126,7 +126,7 @@ class ControllerFrontEnd
             $message.= $passage_ligne."--".$boundary."--".$passage_ligne;
             //==========
             //=====Envoi de l'e-mail.
-            mail($mail,$sujet,$message,$header);
+            $envoi = mail($mail,$sujet,$message,$header);
             //==========
 
             if($envoi == true)
