@@ -22,35 +22,33 @@
 
 <body class="grey">
 
-    <div class="row">
-        <header class="">
+    <header class="">
 
-            <nav class="navbar-fixed blue-grey lighten-1">
-                <div>
-                    <a href="index.php">
-                        <p id="logo" class="left">Jean Forteroche</p>
-                    </a>
-                </div>
+        <nav class="navbar-fixed blue-grey lighten-1">
+            <div>
+                <a href="index.php">
+                    <p id="logo" class="left">Jean Forteroche</p>
+                </a>
+            </div>
 
-                <ul class="navbar-nav right">
-                    <li><a href="index.php">Accueil</a></li>
-                    <li><a href="?action=bio">Biographie</a></li>
-                    <li><a href="?action=contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-    </div>
+            <ul class="navbar-nav right">
+                <li><a href="index.php">Accueil</a></li>
+                <li><a href="?action=bio">Biographie</a></li>
+                <li><a href="?action=contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <h1 class="titreBlog  light-blue-text text-lighten-5 z-depth-2">Billet simple pour l'Alaska</h1>
-
+    <section id="content">
     <?= $content ?>
+    </section>
+    <footer class="blue-grey lighten-1 z-depth-2">
 
-        <footer class="blue-grey lighten-1 z-depth-2">
-
-            <div class="container">
-                <p><span class="right card grey"><a class="white-text" href="?action=adminConnect">ADMINISTRATION </a></span> </p>
-            </div>
-        </footer>
+        <div class="container">
+            <p><span class="right card grey"><a class="white-text" href="?action=adminConnect">ADMINISTRATION </a></span> </p>
+        </div>
+    </footer>
 
         <!--<script type="text/javascript" src="../js/ajax.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
