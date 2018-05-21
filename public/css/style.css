@@ -10,6 +10,17 @@
     font-size: 4.2em;
 }
 
+#slide-out
+{
+    width: 150px;
+    background-color: rgba(0,0,0,0.8);
+}
+
+#slide-out>li a
+{
+    color: rgb(255,255,245);
+}
+/************************************************************************/
 .titreBlog
 {
     font-family: 'Kalam', cursive;
@@ -29,13 +40,6 @@ h1 + p
     margin-left: 15%;
 }
 
-/*article
-{
-    margin-left: 10% !important;
-    width: 75%;
-    padding: 0 !important;
-}
-*/
 .articleCards
 {
     height: 320px;
