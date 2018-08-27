@@ -8,7 +8,7 @@
 while ($post = $posts->fetch())
 {
 ?>
-    <article class="col s12 m4">
+    <article class="col s12 m6">
 
         <div class="card-panel z-depth-2 hoverable articleCards">
 

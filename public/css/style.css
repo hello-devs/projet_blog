@@ -23,12 +23,13 @@
 /************************************************************************/
 .titreBlog
 {
-    font-family: 'Kalam', cursive;
+    font-family: 'Lora';
+    font-style: italic;
     background-size: 100% 100%;
     background-image: url(../imgs/pexels-photo-694218.jpeg);
     margin: 0;
-    padding-top: 85px;
-    padding-bottom: 15px;
+    padding-top: 115px;
+    padding-bottom: 35px;
 }
 h1, h3
 {
@@ -123,7 +124,7 @@ footer
 {
     margin-top: 2em;
     margin-bottom: 1em;
-    height: 10em;
+    height: 15em;
 }
 
 /********Bio******/
@@ -165,7 +166,7 @@ footer
     display: flex;
     justify-content: center;
     flex-direction: column;
-    border-radius: 25px;
+    border-radius: 2px;
 }
 
 .center-cell /*icone centrer dans tableau*/

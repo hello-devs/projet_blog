@@ -24,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 </head>
 
-<body class="grey">
+<body class="grey lighten-4">
     <div class="">
         <div class="row bandeau">
             <p class="bandeau card center s12">Espace d' administration du Blog</p>
@@ -32,7 +32,7 @@
 
         <div class="row">
             <header class="s12">
-                <nav class="navbar-fixed blue-grey lighten-1">
+                <nav class="navbar-fixed blue-grey darken-4">
                     <ul class="navbar-nav">
                         <li><a href="?action=manageBlog">Tableau de bord</a></li>
                         <li><a href="?action=manageArticles">Gestion des articles</a></li>
@@ -56,7 +56,7 @@
 
 
 
-        <footer class="blue-grey lighten-1 z-depth-2">
+        <footer class="blue-grey darken-4">
 
         </footer>
 

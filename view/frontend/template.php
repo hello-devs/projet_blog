@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!--Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Kalam|Montez" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora|Montez" rel="stylesheet">
 
     <!-- Encodage-->
     <meta charset="utf-8" />
@@ -26,11 +26,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 </head>
 
-<body class="grey">
+<body class="grey lighten-3">
 
     <header class="">
 
-        <nav class="navbar-fixed blue-grey lighten-1">
+        <nav class="navbar-fixed blue-grey darken-4">
 
                 <a id="logo" href="index.php" class="left">Jean Forteroche</a>
 
@@ -56,7 +56,7 @@
     <section id="content">
     <?= $content ?>
     </section>
-    <footer class="blue-grey lighten-1 z-depth-2">
+    <footer class="blue-grey darken-4">
 
         <div class="container">
             <p><span class="right card grey"><a class="white-text" href="?action=adminConnect">ADMINISTRATION </a></span> </p>
