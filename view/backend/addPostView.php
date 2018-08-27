@@ -10,10 +10,10 @@
         <form action="?action=createArticle" method="post" class="col s12 m10 offset-m1">
 
             <div class="row">
-                <input type="text" name="titre" placeholder="Titre de l'article" class="col s12 m6">
+                <input type="text" name="titre" placeholder="Titre de l'article" class="col s12 m6" required>
             </div>
             <div class="row">
-                <textarea name="contenu" id="inputArticle" cols="30" rows="10"><br>Votre article ici</textarea>
+                <textarea name="contenu" id="inputArticle" cols="30" rows="10" required><br>Votre article ici</textarea>
             </div>
             <div class="row">
                 <input type="submit" class="btn blue-grey lighten-3">
