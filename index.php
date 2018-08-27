@@ -2,8 +2,11 @@
 
 function loadClass($class)
 {
-
-    if(preg_match('/^Controller/', $class))
+    if($class == 'Router')
+    {
+        require_once('myRouter/' . $class. '.php');
+    }
+    elseif(preg_match('/^Controller/', $class))
     {
         require_once('controller/' . $class. '.php');
     }
@@ -32,5 +35,5 @@ $_SESSION['authentified'] = false;
 
 
 
-$router = new ControllerRouter();
+$router = new Router();
 $router->routerRequete();
