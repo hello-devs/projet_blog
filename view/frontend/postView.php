@@ -2,7 +2,7 @@
 
 
 <div class="row">
-    <article class="col s12 m8 offset-m2 card-panel z-depth-2">
+    <article class="col s12 m10 offset-m1 l8 offset-l2 card-panel z-depth-2">
         <span class="card-title">
             <h2><?= htmlspecialchars($post['title']) ?></h2>
             <em class="date">le <?= $post['creation_date_fr'] ?></em>
@@ -15,17 +15,14 @@
     </article>
 </div>
 
-
-
 <div class="center">
     <p class="btn white"><a href="index.php" class="light-blue-text text-lighten-2">Retour à la liste des billets</a></p>
 </div>
 
-
-<div class="container">
+<div>
 
     <div class="row">
-        <div class="col s12 m6 offset-m3 card-panel">
+        <div class="col s12 m10 offset-m1 l8 offset-l2 card-panel">
 
             <h4>Ajouter un commentaire</h4>
 
@@ -46,12 +43,14 @@
         </div>
     </div>
 
-    <h5 class=" blue-grey lighten-5 center">Commentaires</h5>
+    <h5 class="blue-grey lighten-5 center">Commentaires</h5>
 
+    <div class="row">
     <?php
         while ($comment = $comments->fetch())
         {
         ?>
+    <div class="col s12 m10 offset-m1 l8 offset-l2 card-panel">
         <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le
             <?= $comment['comment_date_fr'] ?>
         </p>
@@ -60,13 +59,12 @@
         </p>
 
         <p class="btn white"><a href="?action=signalCom&id=<?= $comment['id'] ?>&postId=<?= $post['id'] ?>" class="light-blue-text text-lighten-2">Signaler ce commentaire</a></p>
-
-        <hr class="grey lighten-1">
+    </div>
         <?php
         }
         $comments->closeCursor();
         ?>
-
+    </div>
 
 
 </div>
