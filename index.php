@@ -29,7 +29,9 @@ session_start();
 
 //Initialisation de la Variable d'authentification
 if(!isset($_SESSION['authentified']))
-$_SESSION['authentified'] = false;
+{
+    $_SESSION['authentified'] = false;
+}
 //var_dump($_SESSION['authentified']) ;
 
 
