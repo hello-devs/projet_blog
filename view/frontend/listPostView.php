@@ -1,6 +1,6 @@
 <?php $this->title = 'Mon blog - Accueil'; ?>
 
-<p class="card center">Derniers billets du blog :</p>
+<h2 class="card center">Derniers billets du blog :</h2>
 <div class="container">
 <div class="row">
 
@@ -15,7 +15,7 @@ while ($post = $posts->fetch())
         <a href="index.php?action=post&amp;id=<?= $post['id'] ?>">
             <div class="apercuArticle">
                 <div class="card-title black-text">
-                    <?= htmlspecialchars($post['title']) ?>
+                    <h3><?= htmlspecialchars($post['title']) ?></h3>
                     <em class="date"><br> le <?= $post['date_creation_fr'] ?></em>
                 </div>
                 <hr class="">

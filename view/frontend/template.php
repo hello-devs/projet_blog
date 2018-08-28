@@ -12,22 +12,23 @@
 
 
         <!-- Compiled and minified MAterialize CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <link rel="stylesheet" href="public/css/materialize/materializesansmodal.min.css">
 
         <!-- CSS Perso-->
-        <link rel="stylesheet" type="text/css" href="public/css/style.css" />
+        <link rel="stylesheet" href="public/css/style.css" />
 
         <!-- Icons-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
         <!--Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Lora|Montez" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montez" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 
         <!-- Encodage-->
         <meta charset="utf-8" />
 
         <!-- Echelle Mobile -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
     <body class="grey lighten-3">
@@ -68,10 +69,10 @@
         </footer>
 
         <!--<script type="text/javascript" src="../js/ajax.js"></script>-->
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <!-- Compiled and minified JavaScript Materialize-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-        <script type="text/javascript" src="public/js/script.js"></script>
+        <script src="public/js/script.js"></script>
     </body>
 
 </html>

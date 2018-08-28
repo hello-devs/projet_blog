@@ -2,6 +2,8 @@
 
 <div class="container">
     <div class="row">
+        
+    <h2 class="col s12 m10 offset-m1 card center">Laisser un message :</h2>
 
         <?php if(isset($messageSend)): ?>
         <div class="col s12 m10 offset-m1  card-panel ">
