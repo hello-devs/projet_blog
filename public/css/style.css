@@ -102,6 +102,11 @@ a
     background-color: #eee;
 }
 
+.btnSendCom
+{
+    margin: 1em 0;
+}
+
 .nextPage
 {
     list-style: none;
