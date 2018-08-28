@@ -36,7 +36,7 @@
                     <textarea id="comment" name="comment" required></textarea>
                 </div>
                 <div>
-                    <input type="submit" />
+                    <input class="btn blue-grey lighten-3" type="submit" />
                 </div>
             </form>
 
