@@ -18,11 +18,7 @@ class UserManager extends Manager
         $this->setDb($this->dbConnect());
     }
 
-
-
     //Getters
-
-
 
     //Setters
     private function setDb($db)

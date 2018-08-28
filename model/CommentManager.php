@@ -76,29 +76,36 @@ class CommentManager extends Manager
 
     public function signalComment($comId)
     {
+        //revoir
         $db = $this->dbConnect();
-        $signalCom = $db->exec('
+        $signalCom = $db->prepare('
         Update comments
         SET signall = 1
-        WHERE id = '.$comId);
+        WHERE id = ?');
+        
+        $signalCom->execute([$comId]);
     }
 
     public function validComment($comId)
     {
         $db = $this->dbConnect();
-        $validCom = $db->exec('
+        $validCom = $db->prepare('
         Update comments
         SET valid = 1,
         signall = 0
-        WHERE id = '.$comId);
+        WHERE id = ?');
+        
+        $validCom->execute([$comId]);
     }
 
     public function deleteComment($comId)
     {
         $db = $this->dbConnect();
-        $delCom = $db->exec('
+        $delCom = $db->prepare('
             DELETE FROM comments
-            WHERE id ='.$comId);
+            WHERE id = ?');
+        
+        $delCom->execute([$comId]);
     }
 
 
