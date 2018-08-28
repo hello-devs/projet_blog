@@ -33,7 +33,7 @@
 
     <body class="grey lighten-3">
 
-        <header class="">
+        <header>
 
             <nav class="navbar-fixed blue-grey darken-4">
 
@@ -46,8 +46,8 @@
                 </ul>
                 <a href="#" data-target="slide-out" class="right button-collapse sidenav-trigger"><i class="material-icons">menu</i></a>
 
-
             </nav>
+            
             <ul id="slide-out" class="side-nav">
                 <li><a href="index.php">Accueil</a></li>
                 <li><a href="?action=bio">Biographie</a></li>

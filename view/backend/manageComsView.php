@@ -39,7 +39,7 @@
                     </td>
 
                     <td class="center-cell">
-                        <a href="?action=deleteCom&id=<?= $commentaire['id'] ?>"><i class="far fa-trash-alt fa-2x"></i></a>
+                        <a class="suppBdd" href="?action=deleteCom&id=<?= $commentaire['id'] ?>"><i class="far fa-trash-alt fa-2x"></i></a>
                     </td>
                 </tr>
 
@@ -91,7 +91,7 @@
                     </td>
 
                     <td class="center-cell">
-                        <a href="?action=deleteCom&id=<?= $commentaire['id'] ?>"><i class="far fa-trash-alt fa-2x"></i></a>
+                        <a class="suppBdd" href="?action=deleteCom&id=<?= $commentaire['id'] ?>"><i class="far fa-trash-alt fa-2x"></i></a>
                     </td>
                 </tr>
 
@@ -139,7 +139,7 @@
                     </td>
 
                     <td class="center-cell">
-                        <a href="?action=deleteCom&id=<?= $commentaire['id'] ?>"><i class="far fa-trash-alt fa-2x center-i"></i></a>
+                        <a class="suppBdd" href="?action=deleteCom&id=<?= $commentaire['id'] ?>"><i class="far fa-trash-alt fa-2x center-i"></i></a>
                     </td>
                 </tr>
 

@@ -30,7 +30,7 @@
             </div>
             <div class="row">
                 <input type="submit" class="btn blue-grey lighten-3">
-                <div class="btn blue-grey lighten-3"><a class=" white-text" href="?action=deletePost&id=<?= $post['id'] ?>">SUPPRIMER L'ARTICLE</a></div>
+                <div class="btn blue-grey lighten-3"><a class="white-text suppBdd" href="?action=deletePost&id=<?= $post['id'] ?>">SUPPRIMER L'ARTICLE</a></div>
             </div>
 
         </form>

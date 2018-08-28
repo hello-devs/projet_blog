@@ -54,7 +54,7 @@
                     </td>
 
                     <td class="center-cell">
-                        <a href="?action=deletePost&id=<?= $post['id'] ?>"><i class="far fa-trash-alt fa-2x"></i></a>
+                        <a class="suppBdd" href="?action=deletePost&id=<?= $post['id'] ?>"><i class="far fa-trash-alt fa-2x"></i></a>
                     </td>
                 </tr>
 
