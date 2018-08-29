@@ -5,6 +5,8 @@
         <title>
             <?= $title ?>
         </title>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/png" href="public/imgs/book.png" />
         
         <!--    Pas d'indexation jusqu'a validation client-->
         <meta name="robots" content="noindex">
