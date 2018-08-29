@@ -1,6 +1,6 @@
 <?php $this->title = 'Mon blog - Accueil'; ?>
 
-<h2 class="card center">Derniers billets du blog :</h2>
+<h2 class="card center">Derniers épisodes du blog :</h2>
 <div class="container">
 <div class="row">
 
