@@ -22,7 +22,7 @@ while ($post = $posts->fetch())
 
 
                 <p class="black-text">
-                    <?= substr(nl2br($post['content']),0,200) ?>
+                    <?= substr(nl2br($post['content']),0,310) ?> ...
                     <br />
 
                 </p>
