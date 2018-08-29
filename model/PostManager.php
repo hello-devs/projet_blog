@@ -11,7 +11,7 @@ class PostManager extends Manager
         $date_string = $date->format('Y-m-d H:m:s');
 
         $db = $this->dbConnect();
-        $newPost = $db->prepare('INSERT INTO posts(title, content, creation_date) VALUES(:titre, :contenu, :date)');
+        $newPost = $db->prepare('INSERT INTO projet_blog_oc_posts(title, content, creation_date) VALUES(:titre, :contenu, :date)');
 
         $newPost->execute(array(
         'titre'=>$_POST['titre'],
@@ -32,15 +32,15 @@ class PostManager extends Manager
         switch($etat)
         {
             case ('all'):
-                $sql = 'SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr, etat FROM posts ORDER BY creation_date DESC';
+                $sql = 'SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr, etat FROM projet_blog_oc_posts ORDER BY creation_date DESC';
                 break;
 
             case ('publié'):
-                $sql = 'SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr, etat FROM posts WHERE etat = "publié" ORDER BY creation_date DESC';
+                $sql = 'SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr, etat FROM projet_blog_oc_posts WHERE etat = "publié" ORDER BY creation_date DESC';
                 break;
 
             case ('brouillon'):
-                $sql = 'SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr, etat FROM posts WHERE etat = "brouillon" ORDER BY creation_date DESC';
+                $sql = 'SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr, etat FROM projet_blog_oc_posts WHERE etat = "brouillon" ORDER BY creation_date DESC';
                 break;
 
             default:
@@ -57,7 +57,7 @@ class PostManager extends Manager
     public function getPost($postId)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr, etat FROM posts WHERE id = ?');
+        $req = $db->prepare('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr, etat FROM projet_blog_oc_posts WHERE id = ?');
         $req->execute(array($postId));
         $post = $req->fetch();
 
@@ -69,7 +69,7 @@ class PostManager extends Manager
     {
         $db = $this->dbConnect();
         $editPost = $db->prepare('
-        Update posts
+        Update projet_blog_oc_posts
         SET title = :title,
         content = :content
         WHERE id = :postId');
@@ -87,10 +87,9 @@ class PostManager extends Manager
     {
         $db = $this->dbConnect();
         $delPost = $db->prepare('
-            DELETE FROM posts
+            DELETE FROM projet_blog_oc_posts
             WHERE id = ?');
-        
-        $delPost->execute([$postID]);
+        $delPost->execute([$comId]);
     }
 
 
@@ -99,7 +98,7 @@ class PostManager extends Manager
     {
         $db = $this->dbConnect();
         $editPost = $db->prepare('
-        Update posts
+        Update projet_blog_oc_posts
         SET etat = :etat
         WHERE id = :postId');
 

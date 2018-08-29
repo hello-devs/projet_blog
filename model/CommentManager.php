@@ -13,19 +13,19 @@ class CommentManager extends Manager
         switch ($etat)
         {
             case 'all':
-                $sql = 'SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comments ORDER BY comment_date DESC';
+                $sql = 'SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM projet_blog_oc_comments ORDER BY comment_date DESC';
                 break;
 
             case 'signal':
-                $sql = 'SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comments WHERE signall = 1 ORDER BY comment_date DESC';
+                $sql = 'SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM projet_blog_oc_comments WHERE signall = 1 ORDER BY comment_date DESC';
                 break;
 
             case 'avalid':
-                $sql = 'SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comments WHERE valid = 0 ORDER BY comment_date DESC';
+                $sql = 'SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM projet_blog_oc_comments WHERE valid = 0 ORDER BY comment_date DESC';
                 break;
 
             case 'valid':
-                $sql = 'SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comments WHERE valid = 1 ORDER BY comment_date DESC';
+                $sql = 'SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM projet_blog_oc_comments WHERE valid = 1 ORDER BY comment_date DESC';
                 break;
 
             default:
@@ -44,7 +44,7 @@ class CommentManager extends Manager
     public function getComments($postId)
     {
         $db = $this->dbConnect();
-        $comments = $db->prepare('SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comments WHERE post_id = ? ORDER BY comment_date DESC');
+        $comments = $db->prepare('SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM projet_blog_oc_comments WHERE post_id = ? ORDER BY comment_date DESC');
 
         $comments->execute(array($postId));
 
@@ -54,7 +54,7 @@ class CommentManager extends Manager
     public function postComment($postId, $author, $comment)
     {
         $db = $this->dbConnect();
-        $com = $db->prepare('INSERT INTO comments(post_id, author, comment, comment_date) VALUES(?, ?, ?, NOW())');
+        $com = $db->prepare('INSERT INTO projet_blog_oc_comments(post_id, author, comment, comment_date) VALUES(?, ?, ?, NOW())');
 
         $com->execute([$postId, $author, $comment]);
 
@@ -65,7 +65,7 @@ class CommentManager extends Manager
     {
         $db = $this->dbConnect();
         $editCom = $db->prepare('
-        Update comments
+        Update projet_blog_oc_comments
         SET comment = :comment,
         WHERE id = :comId');
 
@@ -76,13 +76,11 @@ class CommentManager extends Manager
 
     public function signalComment($comId)
     {
-        //revoir
         $db = $this->dbConnect();
         $signalCom = $db->prepare('
-        Update comments
+        Update projet_blog_oc_comments
         SET signall = 1
         WHERE id = ?');
-        
         $signalCom->execute([$comId]);
     }
 
@@ -90,11 +88,10 @@ class CommentManager extends Manager
     {
         $db = $this->dbConnect();
         $validCom = $db->prepare('
-        Update comments
+        Update projet_blog_oc_comments
         SET valid = 1,
         signall = 0
         WHERE id = ?');
-        
         $validCom->execute([$comId]);
     }
 
@@ -102,9 +99,8 @@ class CommentManager extends Manager
     {
         $db = $this->dbConnect();
         $delCom = $db->prepare('
-            DELETE FROM comments
+            DELETE FROM projet_blog_oc_comments
             WHERE id = ?');
-        
         $delCom->execute([$comId]);
     }
 
@@ -115,7 +111,7 @@ class CommentManager extends Manager
     public function getCount($field,$value)
     {
         $db = $this->dbConnect();
-        $count = $db->query('SELECT COUNT(*) FROM comments  WHERE '.$field.' = '.$value);
+        $count = $db->query('SELECT COUNT(*) FROM projet_blog_oc_comments  WHERE '.$field.' = '.$value);
 
         return $count->fetchColumn();
     }

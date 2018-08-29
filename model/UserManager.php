@@ -18,7 +18,11 @@ class UserManager extends Manager
         $this->setDb($this->dbConnect());
     }
 
+
+
     //Getters
+
+
 
     //Setters
     private function setDb($db)
@@ -30,7 +34,7 @@ class UserManager extends Manager
     //verif de l'existance du logName et correspondance pwd
     public function verifLog($logName,$pwd)
     {
-        $req = $this->_db->prepare('SELECT * FROM users WHERE logName = :logName');
+        $req = $this->_db->prepare('SELECT * FROM projet_blog_oc_users WHERE logName = :logName');
         $req->execute(array('logName' => $logName));
 
         $existLog = $req->fetch();
@@ -52,8 +56,7 @@ class UserManager extends Manager
             else
             {
                 //L'utilisateur est authentifier:
-
-                //On Créait un User avec les données récupérées en db
+                //On Cr�ait un User avec les données récupérées en db
                 $user = new User($existLog);
                 $_SESSION['user'] = $user;
 
