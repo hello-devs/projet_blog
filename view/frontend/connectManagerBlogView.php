@@ -52,7 +52,7 @@
 
 
     <div class="center">
-        <p class="btn blue-grey lighten-4 btn-large"><a href="index.php" class="white-text">Retour à l'ccueil</a></p>
+        <p class="btn blue-grey lighten-4 btn-large"><a href="index.php" class="white-text">Retour à l'accueil</a></p>
     </div>
 </div>
 
