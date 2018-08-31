@@ -58,8 +58,12 @@
             <?= nl2br(htmlspecialchars($comment['comment'])) ?>
         </p>
 
+        <?php if($comment['valid'] != 1) : ?>
         <p class="btn white"><a href="?action=signalCom&id=<?= $comment['id'] ?>&postId=<?= $post['id'] ?>" class="light-blue-text text-lighten-2">Signaler ce commentaire</a></p>
+        <?php   endif; ?>    
+        
     </div>
+        
         <?php
         }
         $comments->closeCursor();
