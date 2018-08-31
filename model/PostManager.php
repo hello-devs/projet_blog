@@ -89,7 +89,12 @@ class PostManager extends Manager
         $delPost = $db->prepare('
             DELETE FROM projet_blog_oc_posts
             WHERE id = ?');
+        $delComs = $db->prepare('
+            DELETE FROM projet_blog_oc_comments
+            WHERE post_id = ?');
+        
         $delPost->execute([$postId]);
+        $delComs->execute([$postId]);
     }
 
 
