@@ -12,16 +12,16 @@
         <meta name="robots" content="noindex">
         <meta name="googlebot" content="noindex">
         
-        <meta name="description" content="Blog de l'écrivain jean forteroche. Decouvrez son nouveau livre \"Billet simple pour l'alaska\" épisode après épisode."/>
+        <meta name="description" content="Blog de l'écrivain jean forteroche. Decouvrez son nouveau livre: Billet simple pour l'alaska épisode après épisode."/>
         <!--reseau sociaux-->
         <!-- Twitter Card data -->
-        <meta name="twitter:card" content="Blog de l'écrivain jean forteroche. Decouvrez son nouveau livre \"Billet simple pour l'alaska\" épisode après épisode.">
+        <meta name="twitter:card" content="summary_large_image">
         <!-- Open Graph data -->
         <meta property="og:title" content="Billet simple pour l'alaska" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://hello-devs.com/dwj/projet-blog-oc/" />
         <meta property="og:image" content="https://hello-devs.com/dwj/projet-blog-oc/public/imgs/pexels-photo-694218.jpeg" />
-        <meta property="og:description" content="Blog de l'écrivain jean forteroche. Decouvrez son nouveau livre \"Billet simple pour l'alaska\" épisode après épisode." />
+        <meta property="og:description" content="Blog de l'écrivain jean forteroche. Decouvrez son nouveau livre Billet simple pour l'alaska épisode après épisode." />
         <!--reseau sociaux-->
 
 
