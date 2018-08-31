@@ -13,6 +13,7 @@
         <meta name="googlebot" content="noindex">
         
         <meta name="description" content="Blog de l'écrivain jean forteroche. Decouvrez son nouveau livre: Billet simple pour l'alaska épisode après épisode."/>
+        
         <!--reseau sociaux-->
         <!-- Twitter Card data -->
         <meta name="twitter:card" content="summary_large_image">
